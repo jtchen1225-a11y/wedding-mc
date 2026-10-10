@@ -1,0 +1,16 @@
+{
+  "name": "啟殷 & 芷蕎 婚禮司儀手卡",
+  "short_name": "婚禮司儀",
+  "description": "2026年10月10日 啟殷與芷蕎婚禮主持手卡與全流程司儀稿",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#0b0f19",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

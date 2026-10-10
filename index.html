@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>啟殷 × 芷蕎 婚禮完整司儀手卡</title>
+  <meta name="theme-color" content="#0d1117">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="婚禮司儀稿">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151b28;
+      --card-border: #232c3d;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent-gold: #fbbf24;
+      --accent-rose: #f43f5e;
+      --accent-blue: #38bdf8;
+      --cue-bg: rgba(245, 158, 11, 0.12);
+      --cue-border: #f59e0b;
+      --cue-text: #fef3c7;
+      --sister-color: #fda4af;
+      --sister-bg: rgba(244, 63, 94, 0.12);
+      --sister-border: #f43f5e;
+      --brother-color: #7dd3fc;
+      --brother-bg: rgba(56, 189, 248, 0.12);
+      --brother-border: #38bdf8;
+      --both-color: #fde047;
+      --both-bg: rgba(250, 204, 21, 0.12);
+      --both-border: #eab308;
+      --header-bg: rgba(11, 15, 25, 0.92);
+      --base-font-size: 20px;
+      --font-scale: 1;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --header-bg: rgba(248, 250, 252, 0.94);
+      --cue-bg: #fef3c7;
+      --cue-border: #d97706;
+      --cue-text: #78350f;
+      --sister-color: #be123c;
+      --sister-bg: #ffe4e6;
+      --sister-border: #f43f5e;
+      --brother-color: #0369a1;
+      --brother-bg: #e0f2fe;
+      --brother-border: #0284c7;
+      --both-color: #854d0e;
+      --both-bg: #fef9c3;
+      --both-border: #ca8a04;
+    }
+
+    [data-theme="contrast"] {
+      --bg: #000000;
+      --card-bg: #111111;
+      --card-border: #444444;
+      --text: #ffffff;
+      --text-muted: #cccccc;
+      --header-bg: #000000;
+      --accent-gold: #ffff00;
+      --cue-bg: #221c00;
+      --cue-border: #ffff00;
+      --cue-text: #ffffaa;
+      --sister-color: #ff99bb;
+      --sister-bg: #330015;
+      --sister-border: #ff3377;
+      --brother-color: #99ddff;
+      --brother-bg: #002233;
+      --brother-border: #00aaff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans HK", sans-serif;
+      font-size: calc(var(--base-font-size) * var(--font-scale));
+      line-height: 1.68;
+      overflow-x: hidden;
+      transition: background-color 0.2s, color 0.2s;
+      padding-bottom: 90px;
+    }
+
+    /* Fixed Stage Top Bar */
+    header.stage-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 8px 12px;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wedding-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--accent-gold);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .stage-clock {
+      font-family: "SF Mono", "Courier New", monospace;
+      font-size: 1.05rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 3px 8px;
+      border-radius: 6px;
+      color: var(--text);
+      letter-spacing: 1px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .btn-icon {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 5px 9px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-weight: 600;
+    }
+
+    .btn-icon.active {
+      background: #10b981;
+      color: #fff;
+      border-color: #059669;
+    }
+
+    /* Stage Control Quick Strip */
+    .controls-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .controls-strip::-webkit-scrollbar { display: none; }
+
+    .role-pills {
+      display: flex;
+      gap: 4px;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 3px;
+      border-radius: 20px;
+    }
+
+    .role-pill {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .role-pill.active {
+      background: var(--text);
+      color: var(--bg);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .font-pills {
+      display: flex;
+      gap: 3px;
+    }
+
+    .font-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      width: 32px;
+      height: 28px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    /* Horizontal Section Navigation */
+    .section-nav-scroll {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 6px 0 2px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .section-nav-scroll::-webkit-scrollbar { display: none; }
+
+    .nav-chip {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .nav-chip.active {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      background: rgba(251, 191, 36, 0.1);
+    }
+
+    /* Container */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 12px 14px;
+    }
+
+    /* Summary Table Card */
+    .summary-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .summary-table th, .summary-table td {
+      padding: 8px 6px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .summary-table th {
+      color: var(--accent-gold);
+      font-weight: 700;
+      border-bottom: 2px solid var(--accent-gold);
+    }
+
+    .summary-table td.time-col {
+      font-family: monospace;
+      font-weight: 700;
+      color: var(--accent-blue);
+      white-space: nowrap;
+      width: 65px;
+    }
+
+    .summary-table td.phase-col {
+      font-weight: 700;
+      white-space: nowrap;
+      width: 90px;
+    }
+
+    /* Section Header */
+    .section-anchor {
+      margin-top: 24px;
+      margin-bottom: 12px;
+      padding-top: 10px;
+    }
+
+    .section-header-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(251, 191, 36, 0.15), transparent);
+      border-left: 4px solid var(--accent-gold);
+      padding: 8px 12px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .section-time-badge {
+      background: var(--accent-gold);
+      color: #000;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-family: monospace;
+    }
+
+    .section-subtitle {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin: 4px 0 10px 4px;
+    }
+
+    /* Speech & Cue Cards */
+    .speech-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      position: relative;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    /* Dimming in filtered view */
+    body[data-role="sister"] .speech-card.role-brother {
+      opacity: 0.38;
+      border-style: dashed;
+      transform: scale(0.985);
+    }
+
+    body[data-role="sister"] .speech-card.role-sister {
+      border-left: 5px solid var(--sister-border);
+      background: linear-gradient(90deg, var(--sister-bg), var(--card-bg));
+      box-shadow: 0 4px 14px rgba(244, 63, 94, 0.2);
+    }
+
+    body[data-role="brother"] .speech-card.role-sister {
+      opacity: 0.38;
+      border-style: dashed;
+      transform: scale(0.985);
+    }
+
+    body[data-role="brother"] .speech-card.role-brother {
+      border-left: 5px solid var(--brother-border);
+      background: linear-gradient(90deg, var(--brother-bg), var(--card-bg));
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.2);
+    }
+
+    .card-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .speaker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .role-sister .speaker-badge {
+      background: var(--sister-bg);
+      color: var(--sister-color);
+      border: 1px solid var(--sister-border);
+    }
+
+    .role-brother .speaker-badge {
+      background: var(--brother-bg);
+      color: var(--brother-color);
+      border: 1px solid var(--brother-border);
+    }
+
+    .role-both .speaker-badge {
+      background: var(--both-bg);
+      color: var(--both-color);
+      border: 1px solid var(--both-border);
+    }
+
+    .speech-body {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* Stage Action Cue Card */
+    .cue-card {
+      background: var(--cue-bg);
+      border: 2px dashed var(--cue-border);
+      color: var(--cue-text);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin: 10px 0 14px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+    }
+
+    .cue-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-gold);
+      margin-bottom: 4px;
+    }
+
+    .cue-text {
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+
+    .pause-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid #ef4444;
+      color: #fca5a5;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      animation: pulseGlow 2s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.03); opacity: 0.85; }
+    }
+
+    /* Stage Cue Card Mode (Teleprompter view) */
+    #card-view-mode {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 200;
+      flex-direction: column;
+      padding: env(safe-area-inset-top, 10px) 16px env(safe-area-inset-bottom, 16px);
+    }
+
+    .card-view-active #card-view-mode {
+      display: flex;
+    }
+    .card-view-active #scroll-view-mode {
+      display: none;
+    }
+
+    .card-view-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .card-progress {
+      font-family: monospace;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+    }
+
+    .card-view-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 8px;
+      overflow-y: auto;
+    }
+
+    .teleprompter-card {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .teleprompter-speaker {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .teleprompter-text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    .card-view-bottom {
+      display: flex;
+      gap: 12px;
+      padding-top: 12px;
+    }
+
+    .card-nav-btn {
+      flex: 1;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .card-btn-prev {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+    }
+
+    .card-btn-next {
+      background: var(--accent-gold);
+      color: #000;
+    }
+
+    /* Bottom Quick Action Float Bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--header-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
+      z-index: 90;
+    }
+
+    .bottom-nav-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .bottom-nav-btn.active {
+      color: var(--accent-gold);
+    }
+
+    .bottom-nav-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* Drawer / Table of contents modal */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      z-index: 300;
+      display: none;
+    }
+
+    .drawer-overlay.open {
+      display: block;
+    }
+
+    .drawer-panel {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 82%;
+      max-width: 340px;
+      background: var(--bg);
+      border-right: 1px solid var(--card-border);
+      z-index: 310;
+      padding: 16px;
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .drawer-overlay.open .drawer-panel {
+      transform: translateX(0);
+    }
+
+    .drawer-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .drawer-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--card-border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+
+    .drawer-item:active {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .drawer-item-time {
+      font-size: 0.8rem;
+      color: var(--accent-blue);
+      font-family: monospace;
+    }
+
+    /* Screen Wake Lock banner */
+    .wake-banner {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid #10b981;
+      color: #6ee7b7;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    /* Countdown Utility Modal */
+    .countdown-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 400;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .countdown-overlay.open { display: flex; }
+    .countdown-num {
+      font-size: 6rem;
+      font-weight: 900;
+      color: var(--accent-gold);
+      margin: 20px 0;
+      animation: popIn 0.8s ease;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Stage Bar -->
+  <header class="stage-header">
+    <div class="top-row">
+      <div class="wedding-title">
+        <span>💍 啟殷 × 芷蕎</span>
+      </div>
+      <div class="stage-clock" id="live-clock">16:00:00</div>
+      <div class="header-actions">
+        <button class="btn-icon" id="btn-wake" title="保持螢幕長亮">
+          <span>💡</span><span id="wake-status-text">長亮</span>
+        </button>
+        <button class="btn-icon" id="btn-theme" title="切換背景">
+          <span>🌙</span>
+        </button>
+        <button class="btn-icon" id="btn-drawer" title="目錄">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Role Filter and Font Size Adjustment -->
+    <div class="controls-strip">
+      <div class="role-pills">
+        <button class="role-pill active" data-role="all">👥 雙人對稿</button>
+        <button class="role-pill" data-role="sister">👩‍💼 表姐（主講）</button>
+        <button class="role-pill" data-role="brother">👨‍💼 表姐夫（配合）</button>
+      </div>
+      <div class="font-pills">
+        <button class="font-btn" id="btn-font-dec" title="字體縮小">A-</button>
+        <button class="font-btn" id="btn-font-inc" title="字體放大">A+</button>
+      </div>
+    </div>
+
+    <!-- Horizontal Fast Nav Pills -->
+    <nav class="section-nav-scroll" id="quick-nav-pills">
+      <a href="#sec-timeline" class="nav-chip">📋 流程速覽</a>
+      <a href="#sec-tips" class="nav-chip">⚠️ 現場重點</a>
+      <a href="#sec-1" class="nav-chip">16:00 證婚</a>
+      <a href="#sec-2" class="nav-chip">20:00 開場白</a>
+      <a href="#sec-3" class="nav-chip">新人進場</a>
+      <a href="#sec-4" class="nav-chip">切蛋糕</a>
+      <a href="#sec-5" class="nav-chip">合巹交杯</a>
+      <a href="#sec-6" class="nav-chip">祝酒</a>
+      <a href="#sec-7" class="nav-chip">新人互吻</a>
+      <a href="#sec-8" class="nav-chip">致謝送花</a>
+      <a href="#sec-9" class="nav-chip">上乳豬</a>
+      <a href="#sec-10" class="nav-chip">早拍晚播</a>
+      <a href="#sec-11" class="nav-chip">姊妹唱歌</a>
+      <a href="#sec-12" class="nav-chip">叔叔唱歌</a>
+      <a href="#sec-13" class="nav-chip">敬酒</a>
+      <a href="#sec-14" class="nav-chip">第二輪拍照</a>
+      <a href="#sec-15" class="nav-chip">完場感謝</a>
+    </nav>
+  </header>
+
+  <!-- SCROLL VIEW MODE -->
+  <main id="scroll-view-mode" class="container">
+    <div id="wake-prompt-banner" class="wake-banner">
+      <span>💡 已啟用防休眠功能，螢幕將保持恆亮，請安心主持。</span>
+      <span style="cursor:pointer;" onclick="this.parentElement.style.display='none'">✕</span>
+    </div>
+
+
+    <section id="sec-timeline" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">現場流程速覽表</h2>
+        <span class="section-time-badge">速覽</span>
+      </div>
+      
+
+      <div class="summary-card">
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>時間</th>
+              <th>環節</th>
+              <th>現場 Cue / 安排</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td class="time-col">16:00</td>
+              <td class="phase-col">證婚</td>
+              <td>表姐開場 → 請麥律師 → 證婚</td>
+            </tr>
+
+            <tr>
+              <td class="time-col">20:00</td>
+              <td class="phase-col">婚宴開場</td>
+              <td>表姐＋表姐夫｜約4分鐘雙人對答</td>
+            </tr>
+
+            <tr>
+              <td class="time-col">開場後</td>
+              <td class="phase-col">成長片／進場</td>
+              <td>播片 → 燈光音樂 → 新人進場</td>
+            </tr>
+
+            <tr>
+              <td class="time-col">進場後</td>
+              <td class="phase-col">台上儀式</td>
+              <td>蛋糕 → 交杯 → 祝酒 → Kiss → 致謝 → 送花</td>
+            </tr>
+
+            <tr>
+              <td class="time-col">約20:30</td>
+              <td class="phase-col">開席</td>
+              <td>宣佈晚宴開始／上乳豬</td>
+            </tr>
+
+            <tr>
+              <td class="time-col">21:00</td>
+              <td class="phase-col">早拍晚播</td>
+              <td>確認影片 Ready → 播放</td>
+            </tr>
+
+            <tr>
+              <td class="time-col">21:15</td>
+              <td class="phase-col">姊妹唱歌+感言</td>
+              <td>問宴會拎6枝咪 → 《陪着你走》</td>
+            </tr>
+
+            <tr>
+              <td class="time-col">21:30</td>
+              <td class="phase-col">叔叔唱歌</td>
+              <td>隆重介紹叔叔開金口獻唱</td>
+            </tr>
+
+            <tr>
+              <td class="time-col">21:45</td>
+              <td class="phase-col">敬酒</td>
+              <td>新人＋雙方家長逐枱敬酒</td>
+            </tr>
+
+            <tr>
+              <td class="time-col">22:00</td>
+              <td class="phase-col">第二輪拍照</td>
+              <td>按工作人員安排合照</td>
+            </tr>
+
+            <tr>
+              <td class="time-col">22:45</td>
+              <td class="phase-col">完場</td>
+              <td>簡短感謝 → 宣佈圓滿完成</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="sec-tips" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">司儀現場控制重點</h2>
+        <span class="section-time-badge">守則</span>
+      </div>
+      
+
+      <div class="cue-card" style="border-style: solid; border-color: var(--accent-gold);">
+        <div class="cue-header">
+          <span>⚠️ 司儀現場控制 6 大關鍵</span>
+        </div>
+        <ul style="padding-left: 18px; line-height: 1.8;">
+          <li>16:00 證婚儀式：注意麥律師節奏，及時請嘉賓手機靜音。</li>
+          <li>20:00 開場：約4分鐘，笑位唔好等太耐，自然接位。</li>
+          <li>成長片播完：立即接燈光、音樂、新人進場。</li>
+          <li>蛋糕／交杯／Kiss／送花：先確認攝影師 Ready 先做下一個動作！</li>
+          <li>21:00：早拍晚播影片要預先確認可播放。</li>
+          <li>敬酒／合照：MC只作簡短提示，唔拖流程。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="sec-1" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">證婚儀式</h2>
+        <span class="section-time-badge">16:00</span>
+      </div>
+      <p class="section-subtitle">MC：表姐（主講）</p>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【確認新人、雙方家長、麥律師及親友就位】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐</span>
+          </span>
+        </div>
+        <div class="speech-body">各位屋企人，親朋好友，大家好。
+好多謝大家抽時間嚟到呢度，一齊見證啟殷同芷蕎人生入面最神聖、最甜蜜ge時刻。</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐</span>
+          </span>
+        </div>
+        <div class="speech-body">今日好榮幸可以邀請到麥律師親臨現場嚟為佢哋見證呢個重要時刻。</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【可以提醒：儀式開始之前，請大家幫手將手機轉為靜音或者震動模式】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐</span>
+          </span>
+        </div>
+        <div class="speech-body">咁宜家，請大家用最熱烈ge掌聲，歡迎麥律師、同埋兩位主角隆重入場！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span class="pause-badge">⏱️ 停頓等反應</span>
+        </div>
+        <div class="cue-text">【PAUSE —— 等主角與麥律師就位】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐</span>
+          </span>
+        </div>
+        <div class="speech-body">接落嚟，就將時間交俾麥律師。
+亦都請我哋在場每一位，一齊見證啟殷同芷蕎正式踏入人生另一個重要階段。</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【證婚儀式進行中 —— 麥律師主持】</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【證婚完成後】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐</span>
+          </span>
+        </div>
+        <div class="speech-body">好多謝麥律師今日為兩位新人證婚。</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【請兩位新人同麥律師影相】
+【合照安排順序：雙方父母 → 親朋好友 → 朋友】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐</span>
+          </span>
+        </div>
+        <div class="speech-body">請大家再一次用最熱烈ge掌聲恭喜啟殷和芷蕎，正式成為合法夫妻。
+證婚儀式圓滿結束！</div>
+      </div>
+    </section>
+
+    <section id="sec-2" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">婚宴正式開始｜開場白</h2>
+        <span class="section-time-badge">20:00</span>
+      </div>
+      <p class="section-subtitle">表姐 × 表姐夫 雙人對口（約4分鐘）</p>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">現場ge各位嘉賓、各位親朋好友，大家好！好多謝大家今晚能夠百忙之中抽空嚟到呢度，一齊見證啟殷同芷蕎人生入面一個非常幸福、非常重要嘅時刻。
+首先我介紹一下自己先，我係新郎啟殷嘅表姐。</div>
+      </div>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">我係新郎啟殷嘅表姐ge老公，姐係表姐夫，大家好！</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">麻煩大家比小小掌聲我地啦，話哂我地兩公婆都係第一次以呢種組合企係台上。</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span class="pause-badge">⏱️ 停頓等反應</span>
+        </div>
+        <div class="cue-text">【PAUSE —— 等全場掌聲】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">話事話，由細到大，其實我地屋企人好少叫新郎哥「啟殷」。我哋一般都係叫「阿B」。</div>
+      </div>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">今日見到阿B着住套西裝、官仔骨骨企係到，準備做人老公……我第一個感覺係……今日套西裝真係幫咗唔少。</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">喂！今日大日子呀！比少少語言藝術。</div>
+      </div>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">我係讚佢精神呀！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span class="pause-badge">⏱️ 停頓等反應</span>
+        </div>
+        <div class="cue-text">【停 1–2 秒，等笑聲】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">其實今日最有感覺嘅，就一定係一對新人ge爸爸媽媽。見到阿B今日正式成家立室，真係會令人覺得：「嘩，時間過得咁快㗎。」</div>
+      </div>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">我地望下新郎爸爸媽媽，見個仔今日娶老婆，幾開心！</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">睇個笑容就知啦。咁芷蕎ge爸爸媽媽呢？今日多咗個仔，滿唔滿意先？</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span class="pause-badge">⏱️ 停頓等反應</span>
+        </div>
+        <div class="cue-text">【望向女方父母，等笑／點頭；最多 2–3 秒】</div>
+      </div>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">啦~ 呢條問題得一個標準答案！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span class="pause-badge">⏱️ 停頓等反應</span>
+        </div>
+        <div class="cue-text">【笑聲後立即接下一句】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">熟識啟殷ge朋友都知道，佢平時比較文靜，屬於冷靜思考型。所以佢娶到芷蕎，肯定係佢人生經過好精密計算ge決定。</div>
+      </div>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">不過阿B，唔好話表姐夫無教你，婚姻係無邏輯ge，有時候有d野唔好思考太耐，例如老婆問你：「我今日睇落去有咩唔同左？」呢個時候，千期唔好諗，你要即刻同佢講：「你又靚左。」</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">睇黎呢D都係你實戰經驗喎！</div>
+      </div>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">講笑還講笑，其實兩個人可以由相識、相處，到最後決定結婚一齊行落去，真係一件非常難得嘅事。</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">無錯啊，我地係到衷心希望啟殷同芷蕎將來ge生活唔一定要轟轟烈烈、但可以日日安心。開心有人同你笑，辛苦有人坐係身邊，知道對方係到，就已經足夠。
+係正式請兩位新人出場之前，請大家睇大螢幕，一齊欣賞一對新人ge成長片段。</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【播放成長片段】</div>
+      </div>
+    </section>
+
+    <section id="sec-3" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">成長片播完 ｜ 新人進場</h2>
+        <span class="section-time-badge">約20:10</span>
+      </div>
+      <p class="section-subtitle">氣氛高潮 · 請全場熱烈掌聲</p>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【影片結束 → 燈光／音樂 Ready → 新人準備進場】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">睇完呢段咁溫馨ge片段，我相信大家都等唔切想快d見到今晚ge主角！</div>
+      </div>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">一陣新人入場ge時候，大家記得掌聲千期唔好留力，要影相ge朋友，手機準備好未！</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">好，我地宜家用最熱烈ge掌聲，有請今晚兩位主角——新郎啟殷、新娘芷蕎進場~~！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【新人進場／奏音樂／全場掌聲歡呼】
+【新人行到蛋糕位置；確認攝影師 Ready】</div>
+      </div>
+    </section>
+
+    <section id="sec-4" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">切蛋糕儀式</h2>
+        <span class="section-time-badge">台上儀式</span>
+      </div>
+      <p class="section-subtitle">甜蜜新生活</p>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">請兩位新人慢慢行到我地舞台ge中間位置。我地先進行一個甜甜蜜蜜ge切蛋糕儀式！</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">切蛋糕儀式象徵住一對新人由今日開始正式開始甜蜜ge新生活，以後甜苦共擔，一齊分享每份快樂。</div>
+      </div>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">亦都代表以後阿B以後食到咩好野，第一時間要分比老婆！</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">請兩位新人一齊揸住蛋糕刀，我地大家一齊倒數！</div>
+      </div>
+
+      <div class="speech-card role-both">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👥</span>
+            <span>表姐 ＋ 表姐夫（合說）</span>
+          </span>
+        </div>
+        <div class="speech-body">三！二！一！切蛋糕！🎂</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">掌聲恭喜一對新人，祝佢地甜甜蜜蜜、恩愛到老！</div>
+      </div>
+    </section>
+
+    <section id="sec-5" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">合巹交杯</h2>
+        <span class="section-time-badge">台上儀式</span>
+      </div>
+      <p class="section-subtitle">永結同心 · 白頭到老</p>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">跟住落黎係合巹交杯，麻煩請工作人員遞上酒杯比一對新人，請兩位新人手臂交叉，相視一笑飲左呢杯交杯酒！
+祝你哋永結同心、白頭到老！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【新人喝交杯酒／攝影師拍照】</div>
+      </div>
+    </section>
+
+    <section id="sec-6" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">全場祝酒</h2>
+        <span class="section-time-badge">台上儀式</span>
+      </div>
+      <p class="section-subtitle">新婚快樂 · 幸福美滿</p>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">難得今晚親朋好友齊聚，我地一齊舉杯！祝兩位新人新婚快樂、幸福美滿！</div>
+      </div>
+
+      <div class="speech-card role-both">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👥</span>
+            <span>表姐 ＋ 表姐夫（合說）</span>
+          </span>
+        </div>
+        <div class="speech-body">一、二、三，乾杯！🥂</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【全場舉杯祝酒／音效歡呼】</div>
+      </div>
+    </section>
+
+    <section id="sec-7" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">新人互吻</h2>
+        <span class="section-time-badge">台上儀式</span>
+      </div>
+      <p class="section-subtitle">全場甜蜜起哄</p>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【先確認攝影師 Ready】</div>
+      </div>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">現場氣氛咁好，係未仲差少少野？</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">我諗大家都知係咩！請新郎親吻你ge新娘子！💋</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【新人親吻 ／ 全場掌聲歡呼 ／ 攝影拍照】</div>
+      </div>
+    </section>
+
+    <section id="sec-8" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">新人致謝 ＋ 送花俾雙方家長</h2>
+        <span class="section-time-badge">台上儀式</span>
+      </div>
+      <p class="section-subtitle">感恩父母養育之恩</p>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">甜蜜完之後，相信兩位新人今晚都有d心底ge說話想同咁多位親朋好友講，而家將時間交比一對新人。有請啟殷、芷蕎。</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【新人致謝分享】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">多謝一對新人ge分享。跟住落黎係一個非常溫馨ge環節。啟殷同芷蕎準備左鮮花，想向雙方ge父母表達最深ge謝意，感謝佢地多年嚟無微不至ge照顧。有請一對新人送花！💐</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【新人送花給雙方父母 ／ 看情況安排台上合照】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">我地再次用熱烈ge掌聲恭喜啟殷同芷蕎！</div>
+      </div>
+    </section>
+
+    <section id="sec-9" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">宣佈晚宴開始 ｜ 上乳豬</h2>
+        <span class="section-time-badge">約20:30</span>
+      </div>
+      <p class="section-subtitle">鴻運當頭 · 盡情享用</p>
+
+      <div class="speech-card role-brother">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👨‍💼</span>
+            <span>表姐夫（老公）</span>
+          </span>
+        </div>
+        <div class="speech-body">溫馨的儀式告一段落，相信大家ge肚仔都開始餓了！今晚第一道鴻運當頭的乳豬己經準備好上枱了！大家記得今晚唔好客氣，盡情享用！祝大家今晚食得開心，玩得盡興！</div>
+      </div>
+    </section>
+
+    <section id="sec-10" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">早拍晚播影片</h2>
+        <span class="section-time-badge">21:00</span>
+      </div>
+      <p class="section-subtitle">重溫今日珍貴精彩畫面</p>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【確認早拍晚播影片 Ready 播放】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">各位親朋好友，阻大家少少時間。今日由朝早開始，其實已經發生咗好多開心又珍貴嘅畫面，相信有啲片段連啟殷同芷蕎自己都未睇過。
+接落嚟，就等我哋一齊重溫今日嘅精彩時刻。請大家將目光望向大屏幕，一齊欣賞啟殷同芷蕎嘅早拍晚播！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【播放早拍晚播影片】</div>
+      </div>
+    </section>
+
+    <section id="sec-11" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">姊妹唱歌 ＋ 感言</h2>
+        <span class="section-time-badge">21:15</span>
+      </div>
+      <p class="section-subtitle">歌曲：《陪着你走》</p>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【預先問宴會部準備 6 枝無線咪】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">各位親朋好友，接落嚟我哋有一個幾溫馨嘅環節。一場婚禮除咗有家人嘅祝福，身邊一班好朋友、好姊妹一路陪住，其實都好重要。一對新人由相識、拍拖，到今日正式成為夫妻，沿途一定有好多開心、緊張、感動嘅時刻，而好朋友往往就係一路陪住、一路見證嗰班人。</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">所以接落嚟，姊妹們想用一首歌，送上一份屬於朋友之間嘅祝福。呢首歌叫做——《陪着你走》。個歌名其實已經講晒。希望啟殷同芷蕎由今日開始，無論將來遇到開心定辛苦，都可以一直陪住對方，一步一步行落去。
+有請姊妹們，送上《陪着你走》！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【姊妹上台獻唱《陪着你走》】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">「陪着你走，一生一世也不分。」我諗呢句，亦都係對啟殷同芷蕎最好嘅祝福——希望由今日開始，無論開心、辛苦，無論順境、逆境，都可以一路陪住對方，一直行落去。</div>
+      </div>
+    </section>
+
+    <section id="sec-12" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">叔叔唱歌</h2>
+        <span class="section-time-badge">21:30</span>
+      </div>
+      <p class="section-subtitle">重量級嘉賓開金口</p>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">好多謝姊妹，亦都多謝呢份咁有心思嘅祝福。請大家再俾一份掌聲姊妹！
+而接落嚟呢一位，就真係要隆重少少介紹喇。今晚除咗一對新人之外，我哋仲有一位「重量級」嘉賓準備登場。平時未必有咁多機會聽到佢開金口，所以今晚大家一定要俾足掌聲。
+請大家用最熱烈嘅掌聲——隆重歡迎 叔叔 上台，為大家獻唱！有請叔叔！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【叔叔上台獻唱】</div>
+      </div>
+    </section>
+
+    <section id="sec-13" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">敬酒環節</h2>
+        <span class="section-time-badge">21:45</span>
+      </div>
+      <p class="section-subtitle">新人 ＋ 雙方家長逐枱敬酒</p>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">各位親朋好友，接落嚟我哋就準備開始今晚嘅敬酒環節。有請啟殷、芷蕎同雙方家長準備。
+稍後新人去到大家嗰枱嘅時候，大家記得準備好酒杯，同兩位新人一齊飲返杯，送上你哋嘅祝福！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【新人及雙方家長逐枱敬酒進行中】</div>
+      </div>
+    </section>
+
+    <section id="sec-14" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">第二輪拍照</h2>
+        <span class="section-time-badge">22:00</span>
+      </div>
+      <p class="section-subtitle">親友合照時間</p>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【新人／攝影師就位】</div>
+      </div>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">各位親朋好友，接落嚟我哋會開始今晚第二輪合照。頭先未影到、未影夠，或者覺得第一輪自己未發揮得最好嘅朋友，依家仲有機會！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【按工作人員安排逐枱合照】</div>
+      </div>
+    </section>
+
+    <section id="sec-15" class="section-anchor">
+      <div class="section-header-box">
+        <h2 class="section-title">完場感謝詞</h2>
+        <span class="section-time-badge">22:45</span>
+      </div>
+      <p class="section-subtitle">婚宴圓滿完成</p>
+
+      <div class="speech-card role-sister">
+        <div class="card-header-bar">
+          <span class="speaker-badge">
+            <span>👩‍💼</span>
+            <span>表姐（老婆）</span>
+          </span>
+        </div>
+        <div class="speech-body">各位親朋好友，今晚嘅婚宴都差唔多去到尾聲喇。
+好多謝大家今晚嚟到，一齊見證啟殷同芷蕎呢個開心又重要嘅日子。亦都多謝雙方爸爸媽媽、家人、朋友，同埋今晚所有幫手嘅工作人員。
+最後，再一次祝啟殷同芷蕎新婚快樂、甜甜蜜蜜、幸福美滿！今晚好多謝大家，返去一路平安。晚安，多謝晒！</div>
+      </div>
+
+      <div class="cue-card">
+        <div class="cue-header">
+          <span>⚠️ 舞台動作（切勿讀出）</span>
+        </div>
+        <div class="cue-text">【婚禮圓滿結束 ／ 播放歡送音樂 ／ 送客】</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- TELEPROMPTER / CUE CARD VIEW MODE -->
+  <div id="card-view-mode">
+    <div class="card-view-top">
+      <div id="card-sec-badge" style="font-weight:700; color:var(--text-muted); font-size:0.9rem;">環節名稱</div>
+      <div class="card-progress" id="card-progress-indicator">1 / 45</div>
+      <button class="btn-icon" id="btn-exit-card" style="padding:4px 8px;">✕ 退出手卡</button>
+    </div>
+    <div class="card-view-content" id="teleprompter-touch-area">
+      <div class="teleprompter-card" id="teleprompter-card-box">
+        <div class="teleprompter-speaker" id="card-speaker-label">表姐</div>
+        <div class="teleprompter-text" id="card-text-body">台詞內容</div>
+      </div>
+    </div>
+    <div class="card-view-bottom">
+      <button class="card-nav-btn card-btn-prev" id="btn-card-prev">◀ 上一張</button>
+      <button class="card-nav-btn card-btn-next" id="btn-card-next">下一張 ▶</button>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Float Bar -->
+  <nav class="bottom-bar">
+    <button class="bottom-nav-btn active" id="btn-nav-scroll">
+      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+      <span>劇本捲動</span>
+    </button>
+    <button class="bottom-nav-btn" id="btn-nav-cards">
+      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/></svg>
+      <span>逐張手卡</span>
+    </button>
+    <button class="bottom-nav-btn" id="btn-nav-countdown">
+      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V7h2z"/></svg>
+      <span>倒數幫手</span>
+    </button>
+    <button class="bottom-nav-btn" id="btn-nav-top">
+      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+      <span>回頂部</span>
+    </button>
+  </nav>
+
+  <!-- Side Table of Contents Drawer -->
+  <div class="drawer-overlay" id="drawer-overlay">
+    <div class="drawer-panel" id="drawer-panel">
+      <div class="drawer-title">
+        <span>📑 婚禮流程總目錄</span>
+        <span style="cursor:pointer;" id="btn-close-drawer">✕</span>
+      </div>
+      <div style="margin-bottom:12px;">
+        <input type="text" id="drawer-search" placeholder="🔍 搜尋台詞或環節..." style="width:100%; padding:8px 10px; border-radius:8px; border:1px solid var(--card-border); background:var(--card-bg); color:var(--text); font-size:0.9rem;">
+      </div>
+      <div id="drawer-list">
+
+        <a href="#sec-timeline" class="drawer-item" data-secid="sec-timeline">
+          <span>現場流程速覽表</span>
+          <span class="drawer-item-time">速覽</span>
+        </a>
+
+        <a href="#sec-tips" class="drawer-item" data-secid="sec-tips">
+          <span>司儀現場控制重點</span>
+          <span class="drawer-item-time">守則</span>
+        </a>
+
+        <a href="#sec-1" class="drawer-item" data-secid="sec-1">
+          <span>證婚儀式</span>
+          <span class="drawer-item-time">16:00</span>
+        </a>
+
+        <a href="#sec-2" class="drawer-item" data-secid="sec-2">
+          <span>婚宴正式開始｜開場白</span>
+          <span class="drawer-item-time">20:00</span>
+        </a>
+
+        <a href="#sec-3" class="drawer-item" data-secid="sec-3">
+          <span>成長片播完 ｜ 新人進場</span>
+          <span class="drawer-item-time">約20:10</span>
+        </a>
+
+        <a href="#sec-4" class="drawer-item" data-secid="sec-4">
+          <span>切蛋糕儀式</span>
+          <span class="drawer-item-time">台上儀式</span>
+        </a>
+
+        <a href="#sec-5" class="drawer-item" data-secid="sec-5">
+          <span>合巹交杯</span>
+          <span class="drawer-item-time">台上儀式</span>
+        </a>
+
+        <a href="#sec-6" class="drawer-item" data-secid="sec-6">
+          <span>全場祝酒</span>
+          <span class="drawer-item-time">台上儀式</span>
+        </a>
+
+        <a href="#sec-7" class="drawer-item" data-secid="sec-7">
+          <span>新人互吻</span>
+          <span class="drawer-item-time">台上儀式</span>
+        </a>
+
+        <a href="#sec-8" class="drawer-item" data-secid="sec-8">
+          <span>新人致謝 ＋ 送花俾雙方家長</span>
+          <span class="drawer-item-time">台上儀式</span>
+        </a>
+
+        <a href="#sec-9" class="drawer-item" data-secid="sec-9">
+          <span>宣佈晚宴開始 ｜ 上乳豬</span>
+          <span class="drawer-item-time">約20:30</span>
+        </a>
+
+        <a href="#sec-10" class="drawer-item" data-secid="sec-10">
+          <span>早拍晚播影片</span>
+          <span class="drawer-item-time">21:00</span>
+        </a>
+
+        <a href="#sec-11" class="drawer-item" data-secid="sec-11">
+          <span>姊妹唱歌 ＋ 感言</span>
+          <span class="drawer-item-time">21:15</span>
+        </a>
+
+        <a href="#sec-12" class="drawer-item" data-secid="sec-12">
+          <span>叔叔唱歌</span>
+          <span class="drawer-item-time">21:30</span>
+        </a>
+
+        <a href="#sec-13" class="drawer-item" data-secid="sec-13">
+          <span>敬酒環節</span>
+          <span class="drawer-item-time">21:45</span>
+        </a>
+
+        <a href="#sec-14" class="drawer-item" data-secid="sec-14">
+          <span>第二輪拍照</span>
+          <span class="drawer-item-time">22:00</span>
+        </a>
+
+        <a href="#sec-15" class="drawer-item" data-secid="sec-15">
+          <span>完場感謝詞</span>
+          <span class="drawer-item-time">22:45</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Countdown Helper Modal -->
+  <div class="countdown-overlay" id="countdown-modal">
+    <h3 style="color:var(--text); font-size:1.4rem;">台上倒數小幫手</h3>
+    <div class="countdown-num" id="countdown-display">3</div>
+    <div style="display:flex; gap:12px; margin-top:16px;">
+      <button class="btn-icon" style="padding:10px 18px; font-size:1rem;" onclick="startCountdown(3)">切蛋糕 3-2-1</button>
+      <button class="btn-icon" style="padding:10px 18px; font-size:1rem;" onclick="startCountdown(1, true)">乾杯 1-2-3</button>
+    </div>
+    <button class="btn-icon" style="margin-top:20px; background:rgba(255,255,255,0.15);" onclick="document.getElementById('countdown-modal').classList.remove('open')">關閉</button>
+  </div>
+
+  <!-- Embedded Card Data for Card Mode -->
+  <script>
+    const allCardsData = [{"secId": "sec-tips", "secTitle": "司儀現場控制重點", "secTime": "守則", "speaker": "cue", "roleName": "舞台備忘", "text": "• 16:00 證婚儀式：注意麥律師節奏，及時請嘉賓手機靜音。\n• 20:00 開場：約4分鐘，笑位唔好等太耐，自然接位。\n• 成長片播完：立即接燈光、音樂、新人進場。\n• 蛋糕／交杯／Kiss／送花：先確認攝影師 Ready 先做下一個動作！\n• 21:00：早拍晚播影片要預先確認可播放。\n• 敬酒／合照：MC只作簡短提示，唔拖流程。"}, {"speaker": "cue", "text": "【確認新人、雙方家長、麥律師及親友就位】", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 1}, {"speaker": "sister", "roleName": "表姐", "text": "各位屋企人，親朋好友，大家好。\n好多謝大家抽時間嚟到呢度，一齊見證啟殷同芷蕎人生入面最神聖、最甜蜜ge時刻。", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 2}, {"speaker": "sister", "roleName": "表姐", "text": "今日好榮幸可以邀請到麥律師親臨現場嚟為佢哋見證呢個重要時刻。", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 3}, {"speaker": "cue", "text": "【可以提醒：儀式開始之前，請大家幫手將手機轉為靜音或者震動模式】", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 4}, {"speaker": "sister", "roleName": "表姐", "text": "咁宜家，請大家用最熱烈ge掌聲，歡迎麥律師、同埋兩位主角隆重入場！", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 5}, {"speaker": "cue", "text": "【PAUSE —— 等主角與麥律師就位】", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 6}, {"speaker": "sister", "roleName": "表姐", "text": "接落嚟，就將時間交俾麥律師。\n亦都請我哋在場每一位，一齊見證啟殷同芷蕎正式踏入人生另一個重要階段。", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 7}, {"speaker": "cue", "text": "【證婚儀式進行中 —— 麥律師主持】", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 8}, {"speaker": "cue", "text": "【證婚完成後】", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 9}, {"speaker": "sister", "roleName": "表姐", "text": "好多謝麥律師今日為兩位新人證婚。", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 10}, {"speaker": "cue", "text": "【請兩位新人同麥律師影相】\n【合照安排順序：雙方父母 → 親朋好友 → 朋友】", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 11}, {"speaker": "sister", "roleName": "表姐", "text": "請大家再一次用最熱烈ge掌聲恭喜啟殷和芷蕎，正式成為合法夫妻。\n證婚儀式圓滿結束！", "secId": "sec-1", "secTitle": "證婚儀式", "secTime": "16:00", "cardIndex": 12}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "現場ge各位嘉賓、各位親朋好友，大家好！好多謝大家今晚能夠百忙之中抽空嚟到呢度，一齊見證啟殷同芷蕎人生入面一個非常幸福、非常重要嘅時刻。\n首先我介紹一下自己先，我係新郎啟殷嘅表姐。", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 13}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "我係新郎啟殷嘅表姐ge老公，姐係表姐夫，大家好！", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 14}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "麻煩大家比小小掌聲我地啦，話哂我地兩公婆都係第一次以呢種組合企係台上。", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 15}, {"speaker": "cue", "text": "【PAUSE —— 等全場掌聲】", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 16}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "話事話，由細到大，其實我地屋企人好少叫新郎哥「啟殷」。我哋一般都係叫「阿B」。", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 17}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "今日見到阿B着住套西裝、官仔骨骨企係到，準備做人老公……我第一個感覺係……今日套西裝真係幫咗唔少。", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 18}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "喂！今日大日子呀！比少少語言藝術。", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 19}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "我係讚佢精神呀！", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 20}, {"speaker": "cue", "type": "pause", "text": "【停 1–2 秒，等笑聲】", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 21}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "其實今日最有感覺嘅，就一定係一對新人ge爸爸媽媽。見到阿B今日正式成家立室，真係會令人覺得：「嘩，時間過得咁快㗎。」", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 22}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "我地望下新郎爸爸媽媽，見個仔今日娶老婆，幾開心！", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 23}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "睇個笑容就知啦。咁芷蕎ge爸爸媽媽呢？今日多咗個仔，滿唔滿意先？", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 24}, {"speaker": "cue", "type": "pause", "text": "【望向女方父母，等笑／點頭；最多 2–3 秒】", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 25}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "啦~ 呢條問題得一個標準答案！", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 26}, {"speaker": "cue", "type": "pause", "text": "【笑聲後立即接下一句】", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 27}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "熟識啟殷ge朋友都知道，佢平時比較文靜，屬於冷靜思考型。所以佢娶到芷蕎，肯定係佢人生經過好精密計算ge決定。", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 28}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "不過阿B，唔好話表姐夫無教你，婚姻係無邏輯ge，有時候有d野唔好思考太耐，例如老婆問你：「我今日睇落去有咩唔同左？」呢個時候，千期唔好諗，你要即刻同佢講：「你又靚左。」", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 29}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "睇黎呢D都係你實戰經驗喎！", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 30}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "講笑還講笑，其實兩個人可以由相識、相處，到最後決定結婚一齊行落去，真係一件非常難得嘅事。", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 31}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "無錯啊，我地係到衷心希望啟殷同芷蕎將來ge生活唔一定要轟轟烈烈、但可以日日安心。開心有人同你笑，辛苦有人坐係身邊，知道對方係到，就已經足夠。\n係正式請兩位新人出場之前，請大家睇大螢幕，一齊欣賞一對新人ge成長片段。", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 32}, {"speaker": "cue", "text": "【播放成長片段】", "secId": "sec-2", "secTitle": "婚宴正式開始｜開場白", "secTime": "20:00", "cardIndex": 33}, {"speaker": "cue", "text": "【影片結束 → 燈光／音樂 Ready → 新人準備進場】", "secId": "sec-3", "secTitle": "成長片播完 ｜ 新人進場", "secTime": "約20:10", "cardIndex": 34}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "睇完呢段咁溫馨ge片段，我相信大家都等唔切想快d見到今晚ge主角！", "secId": "sec-3", "secTitle": "成長片播完 ｜ 新人進場", "secTime": "約20:10", "cardIndex": 35}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "一陣新人入場ge時候，大家記得掌聲千期唔好留力，要影相ge朋友，手機準備好未！", "secId": "sec-3", "secTitle": "成長片播完 ｜ 新人進場", "secTime": "約20:10", "cardIndex": 36}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "好，我地宜家用最熱烈ge掌聲，有請今晚兩位主角——新郎啟殷、新娘芷蕎進場~~！", "secId": "sec-3", "secTitle": "成長片播完 ｜ 新人進場", "secTime": "約20:10", "cardIndex": 37}, {"speaker": "cue", "text": "【新人進場／奏音樂／全場掌聲歡呼】\n【新人行到蛋糕位置；確認攝影師 Ready】", "secId": "sec-3", "secTitle": "成長片播完 ｜ 新人進場", "secTime": "約20:10", "cardIndex": 38}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "請兩位新人慢慢行到我地舞台ge中間位置。我地先進行一個甜甜蜜蜜ge切蛋糕儀式！", "secId": "sec-4", "secTitle": "切蛋糕儀式", "secTime": "台上儀式", "cardIndex": 39}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "切蛋糕儀式象徵住一對新人由今日開始正式開始甜蜜ge新生活，以後甜苦共擔，一齊分享每份快樂。", "secId": "sec-4", "secTitle": "切蛋糕儀式", "secTime": "台上儀式", "cardIndex": 40}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "亦都代表以後阿B以後食到咩好野，第一時間要分比老婆！", "secId": "sec-4", "secTitle": "切蛋糕儀式", "secTime": "台上儀式", "cardIndex": 41}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "請兩位新人一齊揸住蛋糕刀，我地大家一齊倒數！", "secId": "sec-4", "secTitle": "切蛋糕儀式", "secTime": "台上儀式", "cardIndex": 42}, {"speaker": "both", "roleName": "表姐 ＋ 表姐夫（合說）", "text": "三！二！一！切蛋糕！🎂", "secId": "sec-4", "secTitle": "切蛋糕儀式", "secTime": "台上儀式", "cardIndex": 43}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "掌聲恭喜一對新人，祝佢地甜甜蜜蜜、恩愛到老！", "secId": "sec-4", "secTitle": "切蛋糕儀式", "secTime": "台上儀式", "cardIndex": 44}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "跟住落黎係合巹交杯，麻煩請工作人員遞上酒杯比一對新人，請兩位新人手臂交叉，相視一笑飲左呢杯交杯酒！\n祝你哋永結同心、白頭到老！", "secId": "sec-5", "secTitle": "合巹交杯", "secTime": "台上儀式", "cardIndex": 45}, {"speaker": "cue", "text": "【新人喝交杯酒／攝影師拍照】", "secId": "sec-5", "secTitle": "合巹交杯", "secTime": "台上儀式", "cardIndex": 46}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "難得今晚親朋好友齊聚，我地一齊舉杯！祝兩位新人新婚快樂、幸福美滿！", "secId": "sec-6", "secTitle": "全場祝酒", "secTime": "台上儀式", "cardIndex": 47}, {"speaker": "both", "roleName": "表姐 ＋ 表姐夫（合說）", "text": "一、二、三，乾杯！🥂", "secId": "sec-6", "secTitle": "全場祝酒", "secTime": "台上儀式", "cardIndex": 48}, {"speaker": "cue", "text": "【全場舉杯祝酒／音效歡呼】", "secId": "sec-6", "secTitle": "全場祝酒", "secTime": "台上儀式", "cardIndex": 49}, {"speaker": "cue", "text": "【先確認攝影師 Ready】", "secId": "sec-7", "secTitle": "新人互吻", "secTime": "台上儀式", "cardIndex": 50}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "現場氣氛咁好，係未仲差少少野？", "secId": "sec-7", "secTitle": "新人互吻", "secTime": "台上儀式", "cardIndex": 51}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "我諗大家都知係咩！請新郎親吻你ge新娘子！💋", "secId": "sec-7", "secTitle": "新人互吻", "secTime": "台上儀式", "cardIndex": 52}, {"speaker": "cue", "text": "【新人親吻 ／ 全場掌聲歡呼 ／ 攝影拍照】", "secId": "sec-7", "secTitle": "新人互吻", "secTime": "台上儀式", "cardIndex": 53}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "甜蜜完之後，相信兩位新人今晚都有d心底ge說話想同咁多位親朋好友講，而家將時間交比一對新人。有請啟殷、芷蕎。", "secId": "sec-8", "secTitle": "新人致謝 ＋ 送花俾雙方家長", "secTime": "台上儀式", "cardIndex": 54}, {"speaker": "cue", "text": "【新人致謝分享】", "secId": "sec-8", "secTitle": "新人致謝 ＋ 送花俾雙方家長", "secTime": "台上儀式", "cardIndex": 55}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "多謝一對新人ge分享。跟住落黎係一個非常溫馨ge環節。啟殷同芷蕎準備左鮮花，想向雙方ge父母表達最深ge謝意，感謝佢地多年嚟無微不至ge照顧。有請一對新人送花！💐", "secId": "sec-8", "secTitle": "新人致謝 ＋ 送花俾雙方家長", "secTime": "台上儀式", "cardIndex": 56}, {"speaker": "cue", "text": "【新人送花給雙方父母 ／ 看情況安排台上合照】", "secId": "sec-8", "secTitle": "新人致謝 ＋ 送花俾雙方家長", "secTime": "台上儀式", "cardIndex": 57}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "我地再次用熱烈ge掌聲恭喜啟殷同芷蕎！", "secId": "sec-8", "secTitle": "新人致謝 ＋ 送花俾雙方家長", "secTime": "台上儀式", "cardIndex": 58}, {"speaker": "brother", "roleName": "表姐夫（老公）", "text": "溫馨的儀式告一段落，相信大家ge肚仔都開始餓了！今晚第一道鴻運當頭的乳豬己經準備好上枱了！大家記得今晚唔好客氣，盡情享用！祝大家今晚食得開心，玩得盡興！", "secId": "sec-9", "secTitle": "宣佈晚宴開始 ｜ 上乳豬", "secTime": "約20:30", "cardIndex": 59}, {"speaker": "cue", "text": "【確認早拍晚播影片 Ready 播放】", "secId": "sec-10", "secTitle": "早拍晚播影片", "secTime": "21:00", "cardIndex": 60}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "各位親朋好友，阻大家少少時間。今日由朝早開始，其實已經發生咗好多開心又珍貴嘅畫面，相信有啲片段連啟殷同芷蕎自己都未睇過。\n接落嚟，就等我哋一齊重溫今日嘅精彩時刻。請大家將目光望向大屏幕，一齊欣賞啟殷同芷蕎嘅早拍晚播！", "secId": "sec-10", "secTitle": "早拍晚播影片", "secTime": "21:00", "cardIndex": 61}, {"speaker": "cue", "text": "【播放早拍晚播影片】", "secId": "sec-10", "secTitle": "早拍晚播影片", "secTime": "21:00", "cardIndex": 62}, {"speaker": "cue", "text": "【預先問宴會部準備 6 枝無線咪】", "secId": "sec-11", "secTitle": "姊妹唱歌 ＋ 感言", "secTime": "21:15", "cardIndex": 63}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "各位親朋好友，接落嚟我哋有一個幾溫馨嘅環節。一場婚禮除咗有家人嘅祝福，身邊一班好朋友、好姊妹一路陪住，其實都好重要。一對新人由相識、拍拖，到今日正式成為夫妻，沿途一定有好多開心、緊張、感動嘅時刻，而好朋友往往就係一路陪住、一路見證嗰班人。", "secId": "sec-11", "secTitle": "姊妹唱歌 ＋ 感言", "secTime": "21:15", "cardIndex": 64}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "所以接落嚟，姊妹們想用一首歌，送上一份屬於朋友之間嘅祝福。呢首歌叫做——《陪着你走》。個歌名其實已經講晒。希望啟殷同芷蕎由今日開始，無論將來遇到開心定辛苦，都可以一直陪住對方，一步一步行落去。\n有請姊妹們，送上《陪着你走》！", "secId": "sec-11", "secTitle": "姊妹唱歌 ＋ 感言", "secTime": "21:15", "cardIndex": 65}, {"speaker": "cue", "text": "【姊妹上台獻唱《陪着你走》】", "secId": "sec-11", "secTitle": "姊妹唱歌 ＋ 感言", "secTime": "21:15", "cardIndex": 66}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "「陪着你走，一生一世也不分。」我諗呢句，亦都係對啟殷同芷蕎最好嘅祝福——希望由今日開始，無論開心、辛苦，無論順境、逆境，都可以一路陪住對方，一直行落去。", "secId": "sec-11", "secTitle": "姊妹唱歌 ＋ 感言", "secTime": "21:15", "cardIndex": 67}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "好多謝姊妹，亦都多謝呢份咁有心思嘅祝福。請大家再俾一份掌聲姊妹！\n而接落嚟呢一位，就真係要隆重少少介紹喇。今晚除咗一對新人之外，我哋仲有一位「重量級」嘉賓準備登場。平時未必有咁多機會聽到佢開金口，所以今晚大家一定要俾足掌聲。\n請大家用最熱烈嘅掌聲——隆重歡迎 叔叔 上台，為大家獻唱！有請叔叔！", "secId": "sec-12", "secTitle": "叔叔唱歌", "secTime": "21:30", "cardIndex": 68}, {"speaker": "cue", "text": "【叔叔上台獻唱】", "secId": "sec-12", "secTitle": "叔叔唱歌", "secTime": "21:30", "cardIndex": 69}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "各位親朋好友，接落嚟我哋就準備開始今晚嘅敬酒環節。有請啟殷、芷蕎同雙方家長準備。\n稍後新人去到大家嗰枱嘅時候，大家記得準備好酒杯，同兩位新人一齊飲返杯，送上你哋嘅祝福！", "secId": "sec-13", "secTitle": "敬酒環節", "secTime": "21:45", "cardIndex": 70}, {"speaker": "cue", "text": "【新人及雙方家長逐枱敬酒進行中】", "secId": "sec-13", "secTitle": "敬酒環節", "secTime": "21:45", "cardIndex": 71}, {"speaker": "cue", "text": "【新人／攝影師就位】", "secId": "sec-14", "secTitle": "第二輪拍照", "secTime": "22:00", "cardIndex": 72}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "各位親朋好友，接落嚟我哋會開始今晚第二輪合照。頭先未影到、未影夠，或者覺得第一輪自己未發揮得最好嘅朋友，依家仲有機會！", "secId": "sec-14", "secTitle": "第二輪拍照", "secTime": "22:00", "cardIndex": 73}, {"speaker": "cue", "text": "【按工作人員安排逐枱合照】", "secId": "sec-14", "secTitle": "第二輪拍照", "secTime": "22:00", "cardIndex": 74}, {"speaker": "sister", "roleName": "表姐（老婆）", "text": "各位親朋好友，今晚嘅婚宴都差唔多去到尾聲喇。\n好多謝大家今晚嚟到，一齊見證啟殷同芷蕎呢個開心又重要嘅日子。亦都多謝雙方爸爸媽媽、家人、朋友，同埋今晚所有幫手嘅工作人員。\n最後，再一次祝啟殷同芷蕎新婚快樂、甜甜蜜蜜、幸福美滿！今晚好多謝大家，返去一路平安。晚安，多謝晒！", "secId": "sec-15", "secTitle": "完場感謝詞", "secTime": "22:45", "cardIndex": 75}, {"speaker": "cue", "text": "【婚禮圓滿結束 ／ 播放歡送音樂 ／ 送客】", "secId": "sec-15", "secTitle": "完場感謝詞", "secTime": "22:45", "cardIndex": 76}];
+
+    // Live Stage Clock
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('live-clock').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Screen Wake Lock API
+    let wakeLock = null;
+    const btnWake = document.getElementById('btn-wake');
+    const wakeStatusText = document.getElementById('wake-status-text');
+
+    async function requestWakeLock() {
+      try {
+        if ('wakeLock' in navigator) {
+          wakeLock = await navigator.wakeLock.request('screen');
+          btnWake.classList.add('active');
+          wakeStatusText.textContent = '常亮中';
+          wakeLock.addEventListener('release', () => {
+            btnWake.classList.remove('active');
+            wakeStatusText.textContent = '已停用';
+          });
+        } else {
+          btnWake.classList.add('active');
+          wakeStatusText.textContent = '已常亮';
+        }
+      } catch (err) {
+        console.log('Wake Lock Error:', err);
+      }
+    }
+
+    btnWake.addEventListener('click', async () => {
+      if (wakeLock) {
+        await wakeLock.release();
+        wakeLock = null;
+        btnWake.classList.remove('active');
+        wakeStatusText.textContent = '已暫停';
+      } else {
+        requestWakeLock();
+      }
+    });
+
+    // Auto-request Wake Lock on first interaction
+    document.addEventListener('click', () => {
+      if (!wakeLock) requestWakeLock();
+    }, { once: true });
+    requestWakeLock();
+
+    // Role Filter Handler
+    const rolePills = document.querySelectorAll('.role-pill');
+    rolePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        rolePills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const role = pill.dataset.role;
+        document.body.setAttribute('data-role', role);
+        localStorage.setItem('wedding_mc_role', role);
+      });
+    });
+
+    const savedRole = localStorage.getItem('wedding_mc_role');
+    if (savedRole) {
+      const matchPill = document.querySelector(`.role-pill[data-role="${savedRole}"]`);
+      if (matchPill) matchPill.click();
+    }
+
+    // Font Size Scaler
+    let fontScale = parseFloat(localStorage.getItem('wedding_mc_font_scale') || '1.0');
+    function applyFontScale(scale) {
+      fontScale = Math.min(Math.max(scale, 0.85), 1.6);
+      document.documentElement.style.setProperty('--font-scale', fontScale);
+      localStorage.setItem('wedding_mc_font_scale', fontScale);
+    }
+    applyFontScale(fontScale);
+
+    document.getElementById('btn-font-inc').addEventListener('click', () => applyFontScale(fontScale + 0.1));
+    document.getElementById('btn-font-dec').addEventListener('click', () => applyFontScale(fontScale - 0.1));
+
+    // Theme Switcher (Dark -> Contrast -> Light)
+    const themes = ['dark', 'contrast', 'light'];
+    let currentThemeIdx = 0;
+    const btnTheme = document.getElementById('btn-theme');
+
+    function applyTheme(theme) {
+      document.body.setAttribute('data-theme', theme);
+      if (theme === 'dark') {
+        btnTheme.innerHTML = '<span>🌙</span>';
+      } else if (theme === 'contrast') {
+        btnTheme.innerHTML = '<span>⚡</span>';
+      } else {
+        btnTheme.innerHTML = '<span>☀️</span>';
+      }
+      localStorage.setItem('wedding_mc_theme', theme);
+    }
+
+    btnTheme.addEventListener('click', () => {
+      currentThemeIdx = (currentThemeIdx + 1) % themes.length;
+      applyTheme(themes[currentThemeIdx]);
+    });
+
+    const savedTheme = localStorage.getItem('wedding_mc_theme') || 'dark';
+    currentThemeIdx = themes.indexOf(savedTheme);
+    applyTheme(savedTheme);
+
+    // Drawer / Table of contents
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const btnDrawer = document.getElementById('btn-drawer');
+    const btnCloseDrawer = document.getElementById('btn-close-drawer');
+    const drawerSearch = document.getElementById('drawer-search');
+
+    btnDrawer.addEventListener('click', () => drawerOverlay.classList.add('open'));
+    btnCloseDrawer.addEventListener('click', () => drawerOverlay.classList.remove('open'));
+    drawerOverlay.addEventListener('click', (e) => {
+      if (e.target === drawerOverlay) drawerOverlay.classList.remove('open');
+    });
+
+    document.querySelectorAll('.drawer-item').forEach(item => {
+      item.addEventListener('click', () => {
+        drawerOverlay.classList.remove('open');
+      });
+    });
+
+    drawerSearch.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      document.querySelectorAll('.drawer-item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(q) ? 'flex' : 'none';
+      });
+    });
+
+    // Cue Card Mode Logic
+    let currentCardIdx = 0;
+    const btnNavScroll = document.getElementById('btn-nav-scroll');
+    const btnNavCards = document.getElementById('btn-nav-cards');
+    const btnExitCard = document.getElementById('btn-exit-card');
+    const cardProgressIndicator = document.getElementById('card-progress-indicator');
+    const cardSecBadge = document.getElementById('card-sec-badge');
+    const cardSpeakerLabel = document.getElementById('card-speaker-label');
+    const cardTextBody = document.getElementById('card-text-body');
+    const teleprompterCardBox = document.getElementById('teleprompter-card-box');
+
+    function renderCard(idx) {
+      if (idx < 0) idx = 0;
+      if (idx >= allCardsData.length) idx = allCardsData.length - 1;
+      currentCardIdx = idx;
+
+      const card = allCardsData[idx];
+      cardProgressIndicator.textContent = `${idx + 1} / ${allCardsData.length}`;
+      cardSecBadge.textContent = `${card.secTime} · ${card.secTitle}`;
+      
+      if (card.speaker === 'cue') {
+        cardSpeakerLabel.innerHTML = '⚠️ 舞台動作（切勿讀出）';
+        cardSpeakerLabel.style.color = 'var(--accent-gold)';
+        teleprompterCardBox.style.border = '2px dashed var(--cue-border)';
+        teleprompterCardBox.style.background = 'var(--cue-bg)';
+      } else {
+        const isSister = card.speaker === 'sister';
+        const isBoth = card.speaker === 'both';
+        cardSpeakerLabel.innerHTML = (isSister ? '👩‍💼 ' : (isBoth ? '👥 ' : '👨‍💼 ')) + (card.roleName || '');
+        cardSpeakerLabel.style.color = isSister ? 'var(--sister-color)' : (isBoth ? 'var(--both-color)' : 'var(--brother-color)');
+        teleprompterCardBox.style.border = '2px solid var(--card-border)';
+        teleprompterCardBox.style.background = 'var(--card-bg)';
+      }
+      cardTextBody.textContent = card.text;
+    }
+
+    btnNavCards.addEventListener('click', () => {
+      document.body.classList.add('card-view-active');
+      btnNavCards.classList.add('active');
+      btnNavScroll.classList.remove('active');
+      renderCard(currentCardIdx);
+    });
+
+    function exitCardMode() {
+      document.body.classList.remove('card-view-active');
+      btnNavScroll.classList.add('active');
+      btnNavCards.classList.remove('active');
+    }
+
+    btnExitCard.addEventListener('click', exitCardMode);
+    btnNavScroll.addEventListener('click', exitCardMode);
+
+    document.getElementById('btn-card-prev').addEventListener('click', () => renderCard(currentCardIdx - 1));
+    document.getElementById('btn-card-next').addEventListener('click', () => renderCard(currentCardIdx + 1));
+
+    // Touch swipe left/right for Card Mode
+    let touchStartX = 0;
+    const touchArea = document.getElementById('teleprompter-touch-area');
+    touchArea.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    touchArea.addEventListener('touchend', e => {
+      const touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        renderCard(currentCardIdx + 1); // Swipe left = next
+      } else if (touchEndX - touchStartX > 50) {
+        renderCard(currentCardIdx - 1); // Swipe right = prev
+      }
+    }, { passive: true });
+
+    // Scroll back to top button
+    document.getElementById('btn-nav-top').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Countdown Helper
+    const countdownModal = document.getElementById('countdown-modal');
+    const countdownDisplay = document.getElementById('countdown-display');
+    document.getElementById('btn-nav-countdown').addEventListener('click', () => {
+      countdownModal.classList.add('open');
+    });
+
+    let countdownTimer = null;
+    function startCountdown(startNum, forward = false) {
+      if (countdownTimer) clearInterval(countdownTimer);
+      let cur = startNum;
+      countdownDisplay.textContent = cur;
+      countdownTimer = setInterval(() => {
+        if (!forward) {
+          cur--;
+          if (cur < 1) {
+            clearInterval(countdownTimer);
+            countdownDisplay.textContent = '🎉 切蛋糕！';
+            return;
+          }
+        } else {
+          cur++;
+          if (cur > 3) {
+            clearInterval(countdownTimer);
+            countdownDisplay.textContent = '🥂 乾杯！';
+            return;
+          }
+        }
+        countdownDisplay.textContent = cur;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
