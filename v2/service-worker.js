@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wedding-mc-stage-v2-entrance-20261010';
+const CACHE_NAME = 'wedding-mc-stage-v2-ceremony-20261010';
 const CORE = ['./', './index.html', './manifest.json', './icon.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
