@@ -708,6 +708,33 @@
       50% { transform: scale(1.2); }
       100% { transform: scale(1); opacity: 1; }
     }
+
+    /* Stage reliability enhancements */
+    html { scroll-padding-top: 165px; }
+    .section-anchor { scroll-margin-top: 165px; }
+    .btn-icon, .font-btn, .role-pill, .nav-chip, .bottom-nav-btn { min-height: 40px; }
+    .drawer-item { min-height: 48px; }
+    .teleprompter-text { overflow-wrap: anywhere; }
+    .card-view-content { justify-content: flex-start; }
+    .teleprompter-card { margin: auto 0; }
+    .wake-banner[data-state="off"] { background: rgba(245,158,11,.1); border-color: #f59e0b; color: #fef3c7; }
+    .stage-toast { position: fixed; left: 12px; right: 12px; bottom: 90px; z-index: 500; padding: 12px 16px; border-radius: 10px; color:#fff; background:#334155; text-align:center; font-size: .85rem; pointer-events:none; }
+    body.card-view-active .bottom-bar { display:none; }
+    @media(max-width: 480px) {
+      .wedding-title { font-size: .8rem; }
+      .stage-clock { font-size:.85rem; letter-spacing:0; padding:4px; }
+      .top-row { gap:4px; }
+      .header-actions { gap:3px; }
+      .btn-icon { padding: 6px; }
+      .role-pill { font-size:.72rem; padding:7px; }
+      .container { padding:10px; }
+      .summary-card { overflow-x:auto; }
+      .summary-table { min-width:510px; }
+      .teleprompter-card { padding:16px; }
+      .teleprompter-text { font-size:calc(1.35rem * var(--font-scale)); line-height:1.55; }
+      .card-nav-btn { min-height:56px; }
+    }
+    @media(prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; scroll-behavior:auto !important; } }
   </style>
 </head>
 <body>
@@ -770,7 +797,7 @@
   <!-- SCROLL VIEW MODE -->
   <main id="scroll-view-mode" class="container">
     <div id="wake-prompt-banner" class="wake-banner">
-      <span>💡 已啟用防休眠功能，螢幕將保持恆亮，請安心主持。</span>
+      <span>正在確認螢幕長亮狀態…</span>
       <span style="cursor:pointer;" onclick="this.parentElement.style.display='none'">✕</span>
     </div>
 
@@ -1952,14 +1979,14 @@
   </div>
 
   <!-- Countdown Helper Modal -->
-  <div class="countdown-overlay" id="countdown-modal">
+  <div class="countdown-overlay" id="countdown-modal" role="dialog" aria-modal="true" aria-label="台上倒數小幫手">
     <h3 style="color:var(--text); font-size:1.4rem;">台上倒數小幫手</h3>
     <div class="countdown-num" id="countdown-display">3</div>
     <div style="display:flex; gap:12px; margin-top:16px;">
       <button class="btn-icon" style="padding:10px 18px; font-size:1rem;" onclick="startCountdown(3)">切蛋糕 3-2-1</button>
       <button class="btn-icon" style="padding:10px 18px; font-size:1rem;" onclick="startCountdown(1, true)">乾杯 1-2-3</button>
     </div>
-    <button class="btn-icon" style="margin-top:20px; background:rgba(255,255,255,0.15);" onclick="document.getElementById('countdown-modal').classList.remove('open')">關閉</button>
+    <button class="btn-icon" style="margin-top:20px; background:rgba(255,255,255,0.15);" onclick="closeCountdown()">關閉</button>
   </div>
 
   <!-- Embedded Card Data for Card Mode -->
@@ -1979,6 +2006,7 @@
 
     // Screen Wake Lock API
     let wakeLock = null;
+    let wakeWanted = true;
     const btnWake = document.getElementById('btn-wake');
     const wakeStatusText = document.getElementById('wake-status-text');
 
@@ -1986,35 +2014,43 @@
       try {
         if ('wakeLock' in navigator) {
           wakeLock = await navigator.wakeLock.request('screen');
+          if (!wakeWanted) { await wakeLock.release(); wakeLock=null; return; }
           btnWake.classList.add('active');
           wakeStatusText.textContent = '常亮中';
+          if (typeof showWakeStatus === 'function') showWakeStatus(true);
           wakeLock.addEventListener('release', () => {
             btnWake.classList.remove('active');
             wakeStatusText.textContent = '已停用';
+            if (typeof showWakeStatus === 'function') showWakeStatus(false);
           });
         } else {
-          btnWake.classList.add('active');
-          wakeStatusText.textContent = '已常亮';
+          btnWake.classList.remove('active');
+          wakeStatusText.textContent = '不支援';
         }
       } catch (err) {
+        btnWake.classList.remove('active');
+        wakeStatusText.textContent = '無法長亮';
+        if (typeof showWakeStatus === 'function') showWakeStatus(false);
         console.log('Wake Lock Error:', err);
       }
     }
 
     btnWake.addEventListener('click', async () => {
       if (wakeLock) {
+        wakeWanted = false;
         await wakeLock.release();
         wakeLock = null;
         btnWake.classList.remove('active');
         wakeStatusText.textContent = '已暫停';
       } else {
+        wakeWanted = true;
         requestWakeLock();
       }
     });
 
     // Auto-request Wake Lock on first interaction
     document.addEventListener('click', () => {
-      if (!wakeLock) requestWakeLock();
+      if (!wakeLock && wakeWanted) requestWakeLock();
     }, { once: true });
     requestWakeLock();
 
@@ -2071,7 +2107,7 @@
     });
 
     const savedTheme = localStorage.getItem('wedding_mc_theme') || 'dark';
-    currentThemeIdx = themes.indexOf(savedTheme);
+    currentThemeIdx = Math.max(0, themes.indexOf(savedTheme));
     applyTheme(savedTheme);
 
     // Drawer / Table of contents
@@ -2184,6 +2220,7 @@
     });
 
     let countdownTimer = null;
+    function closeCountdown() { if (countdownTimer) clearInterval(countdownTimer); countdownTimer=null; countdownModal.classList.remove('open'); }
     function startCountdown(startNum, forward = false) {
       if (countdownTimer) clearInterval(countdownTimer);
       let cur = startNum;
@@ -2206,6 +2243,54 @@
         }
         countdownDisplay.textContent = cur;
       }, 1000);
+    }
+
+    // Stage reliability additions: jump to the right cue card and keep role selection.
+    const sectionFirstCard = new Map();
+    allCardsData.forEach((c, i) => { if (!sectionFirstCard.has(c.secId)) sectionFirstCard.set(c.secId, i); });
+    function rememberSection(id) {
+      if (sectionFirstCard.has(id)) {
+        currentCardIdx = sectionFirstCard.get(id);
+        try { sessionStorage.setItem('wedding_mc_section', id); } catch (_) {}
+      }
+    }
+    document.querySelectorAll('a[href^="#sec-"]').forEach(link => {
+      link.addEventListener('click', () => rememberSection(link.getAttribute('href').slice(1)));
+    });
+    try { const savedSection=sessionStorage.getItem('wedding_mc_section'); if(savedSection) rememberSection(savedSection); } catch (_) {}
+    const originalRenderCard = renderCard;
+    renderCard = function(idx) {
+      // When changing cards, skip other host's speech but keep shared lines and stage cues.
+      const role = document.body.getAttribute('data-role') || 'all';
+      if (role !== 'all' && idx !== currentCardIdx && idx >= 0 && idx < allCardsData.length) {
+        const step = idx > currentCardIdx ? 1 : -1;
+        while (idx >= 0 && idx < allCardsData.length && !['cue', 'both', role].includes(allCardsData[idx].speaker)) idx += step;
+      }
+      originalRenderCard(idx);
+      const contentPane = document.getElementById('teleprompter-touch-area');
+      contentPane.scrollTop = 0;
+      const current = allCardsData[currentCardIdx];
+      if (current) { try { sessionStorage.setItem('wedding_mc_section', current.secId); } catch (_) {} }
+      document.getElementById('btn-card-prev').disabled = currentCardIdx <= 0;
+      document.getElementById('btn-card-next').disabled = currentCardIdx >= allCardsData.length - 1;
+    };
+    document.addEventListener('keydown', event => {
+      if (!document.body.classList.contains('card-view-active')) return;
+      if (event.key === 'ArrowRight' || event.key === ' ') { event.preventDefault(); renderCard(currentCardIdx + 1); }
+      if (event.key === 'ArrowLeft') { event.preventDefault(); renderCard(currentCardIdx - 1); }
+      if (event.key === 'Escape') exitCardMode();
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && !wakeLock && navigator.wakeLock && wakeWanted) requestWakeLock();
+    });
+    const wakeBanner = document.getElementById('wake-prompt-banner');
+    function showWakeStatus(active) {
+      wakeBanner.dataset.state=active ? 'on' : 'off';
+      wakeBanner.firstElementChild.textContent = active ? '螢幕長亮已啟用（仍建議確認手機電量）。' : '螢幕未能保持長亮，請檢查手機自動鎖定設定。';
+    }
+    showWakeStatus(!!wakeLock);
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(() => {}));
     }
   </script>
 </body>
